@@ -96,3 +96,6 @@ Topic: quickstart-events	TopicId: kimuAsqtSESCOG5e9Lmq5Q	PartitionCount: 4	Repli
 	Topic: quickstart-events	Partition: 2	Leader: 1003	Replicas: 1001,1002,1003	Isr: 1003,1002,1001
 	Topic: quickstart-events	Partition: 3	Leader: 1002	Replicas: 1002,1001,1003	Isr: 1002,1001,1003
 ```
+
+## 外部工具
+1. [kafka ui](https://kafbat.io/)
