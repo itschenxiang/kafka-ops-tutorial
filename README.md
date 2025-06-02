@@ -1,9 +1,9 @@
 # Kafka Ops Tutorial
 ## 本地安装-docker
 ```
-sh startLocalCluster.sh
+$ sh startLocalCluster.sh
 
-docker ps | grep kafka
+$ docker ps | grep kafka
 ```
 
 通过本地[kafka ui](http://localhost:8080/)查看集群信息。
@@ -40,8 +40,9 @@ ls /brokers/ids
 #### 示例
 > 后续所有对 broker 主题的操作默认都执行了如下命令。
 ```bash
-docker run -it --rm --network kafka-ops-tutorial_default -v .:/tmp/kafka-ops-tutorial docker.io/bitnami/kafka:3.4 /bin/bash
-cd /opt/bitnami/kafka
+$ docker run -it --rm --network kafka-ops-tutorial_default -v .:/tmp/kafka-ops-tutorial docker.io/bitnami/kafka:3.4 /bin/bash
+
+$ cd /opt/bitnami/kafka
 ```
 
 新建一个 topic，4 分区 3 副本：
