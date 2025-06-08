@@ -2,13 +2,17 @@ auth:
   type: DISABLED
 kafka:
   clusters:
-  - bootstrapServers: kafka1:19092,kafka2:29092,kafka3:39092,kafka4:49092
+  - bootstrapServers: kafka1:19092
     consumerProperties: {}
     kafkaConnect: []
     masking: []
     name: local-cluster
     producerProperties: {}
-    properties: {}
+    properties:
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required
+        username="kafka_inner_broker_user" password="kafka_inner_broker_password";
     readOnly: false
     serde: []
 rbac:
