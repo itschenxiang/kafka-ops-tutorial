@@ -2,7 +2,7 @@ auth:
   type: DISABLED
 kafka:
   clusters:
-  - bootstrapServers: kafka1:19092
+  - bootstrapServers: kafka1:19092,kafka2:29092,kafka3:39092,kafka4:49092
     consumerProperties: {}
     kafkaConnect: []
     masking: []
