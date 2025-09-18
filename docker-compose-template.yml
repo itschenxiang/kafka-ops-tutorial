@@ -80,3 +80,16 @@ services:
       - kafka4
     volumes:
       - {{WORK_DIR}}/kafka-ui.yml:/etc/kafkaui/dynamic_config.yaml
+  schema-registry:
+    container_name: schema-registry
+    image: bitnami/schema-registry:latest
+    ports:
+      - "8081:8081"
+    environment:
+      - SCHEMA_REGISTRY_KAFKA_BROKERS=PLAINTEXT://kafka1:19092,PLAINTEXT://kafka2:29092,PLAINTEXT://kafka3:39092,PLAINTEXT://kafka4:49092
+      - SCHEMA_REGISTRY_HOST_NAME=schema-registry
+      - SCHEMA_REGISTRY_LISTENERS=http://0.0.0.0:8081
+    volumes:
+      - "{{WORK_DIR}}/.schema-registry:/bitnami"
+    depends_on:
+      - kafka4
